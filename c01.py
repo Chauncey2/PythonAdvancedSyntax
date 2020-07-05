@@ -1,13 +1,13 @@
 from functools import wraps
 
-# def logit(func):
-#     @wraps(func)
-#     def my_decorator(*args,**kwargs):
-#         log_string = func.__name__ + " was cal."
-#         print(log_string)
+def logit2(func):
+    @wraps(func)
+    def my_decorator(*args,**kwargs):
+        log_string = func.__name__ + " was cal."
+        print(log_string)
 
-#         return func(*args,**kwargs)
-#     return my_decorator
+        return func(*args,**kwargs)
+    return my_decorator
 
 def logit1(logFile='out.log'):
     """
