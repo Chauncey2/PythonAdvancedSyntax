@@ -9,7 +9,7 @@ from functools import wraps
 #         return func(*args,**kwargs)
 #     return my_decorator
 
-def logit1(logfile='out.log'):
+def logit1(logFile='out.log'):
     """
     返回一个包裹函数
     """
@@ -18,12 +18,11 @@ def logit1(logfile='out.log'):
         def wraps_function(*args,**kwargs):
             log_string = func.__name__ + " was cal ."
             print(log_string)
-            with open(logfile,'a') as logfile:
+            with open(logFile,'a') as logfile:
                 logfile.write(log_string)
-            return fun(*args,**kwargs)
+            return func(*args,**kwargs)
         return wraps_function
     return log_decorator
-
 
 class logit(object):
     """
@@ -57,8 +56,9 @@ class emain_log(logit):
     def notify(self):
         print("打屏的基础上将日志信息发送到邮箱")
 
+
 # @emain_log()
-@logit1
+@logit1()
 def add(a,b):
     return a+b
 
