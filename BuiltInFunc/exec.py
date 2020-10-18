@@ -14,13 +14,14 @@ def main():
     python_str = "print('字符串转换命令')"
     
     exec(python_str)
-    
+
 x = 10
 expr = """
 z = 30
 sum = x + y + z
 print(sum)
 """
+
 def func():
     y = 20
     exec(expr)
